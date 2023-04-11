@@ -34,6 +34,13 @@ namespace Ozon
             ListProduct = new();
             DataContext = this;
             db = new ApplicationContext();
+            this.Loaded += DB_Loaded;
+        }
+
+        private void DB_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<Product> products = db.Products.ToList();
+            listproduct.ItemsSource = products;
         }
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
@@ -42,7 +49,7 @@ namespace Ozon
             
             Forms.Window_Add add = new Forms.Window_Add();
             add.ShowDialog();
-            ListProduct.Add(add.Product);
+           ListProduct.Add(add.Product);
         }
 
         private void btn_dlt_Click(object sender, RoutedEventArgs e)

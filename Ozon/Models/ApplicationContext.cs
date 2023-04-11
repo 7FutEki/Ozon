@@ -12,7 +12,7 @@ namespace Ozon.Models
         public DbSet<Product> Products { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source = Ozon2.db");
+            optionsBuilder.UseSqlite("Data Source = Ozon3.db");
         }
 
     }

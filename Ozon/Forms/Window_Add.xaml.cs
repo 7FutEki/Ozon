@@ -1,10 +1,12 @@
-﻿using Ozon.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Ozon.Models;
 using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,7 +25,7 @@ namespace Ozon.Forms
     /// </summary>
     public partial class Window_Add : Window
     {
-        ApplicationContext db = new ApplicationContext();
+       
         public Product Product { get; set; }
         public Window_Add()
         {
@@ -37,8 +39,9 @@ namespace Ozon.Forms
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-            
-            Product product = new Product()
+            ApplicationContext db = new ApplicationContext();
+
+            Product product = new Product
             {
                 Name = Product.Name,
                 Price = Product.Price,
@@ -46,6 +49,7 @@ namespace Ozon.Forms
                 Id = Guid.NewGuid(),
 
             };
+            db.Database.Migrate();
             db.Products.Add(product);
             db.SaveChanges();
             this.Close();
@@ -74,5 +78,6 @@ namespace Ozon.Forms
             image.EndInit();
             return image;
         }
+        
     }
 }

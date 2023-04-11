@@ -25,13 +25,13 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="3" Text="Имя товара" TextAlignment="Center" FontSize="15" Height="20" />
-        <TextBox x:Name="tb_name" Grid.Row="0" Grid.Column="4" Text="{Binding name}" Width="200" Height="50"/>
+        <TextBox x:Name="tb_name" Grid.Row="0" Grid.Column="4" Text="{Binding Name}" Width="200" Height="50"/>
 
         <TextBlock Grid.Row="1" Grid.Column="3" Text="Цена товара" TextAlignment="Center" FontSize="15" Height="20" />
-        <TextBox x:Name="tb_price" Grid.Row="1" Grid.Column="4" Text="{Binding price}" Width="200" Height="50" />
+        <TextBox x:Name="tb_price" Grid.Row="1" Grid.Column="4" Text="{Binding Price}" Width="200" Height="50" />
 
         <TextBlock Grid.Row="2" Grid.Column="3"  Text="Описание товара" TextAlignment="Center" FontSize="15" Height="20" />
-        <TextBox x:Name="tb_opt" Grid.Row="2" Grid.Column="4"  Text="{Binding options}" Width="200" Height="50" />
+        <TextBox x:Name="tb_opt" Grid.Row="2" Grid.Column="4"  Text="{Binding Options}" Width="200" Height="50" />
 
         <TextBlock Grid.Row="3" Grid.Column="3" Text="Уникальный идентификатор" TextAlignment="Center" FontSize="15" Height="20" />
         <TextBox Grid.Row="3" x:Name="tb_id"  Grid.Column="4" Text="{Binding Id}" Width="200" Height="50" />

@@ -11,7 +11,7 @@ using Ozon.Models;
 namespace Ozon.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20230410133552_v1")]
+    [Migration("20230411083208_v1")]
     partial class v1
     {
         /// <inheritdoc />
